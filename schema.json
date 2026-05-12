@@ -1,0 +1,96 @@
+{
+  "candidate_id": "string",
+  "resume_id": "string",
+  "personal_information": {
+    "full_name": "string",
+    "email": "string",
+    "phone": "string",
+    "location": "string",
+    "linkedin": "string",
+    "github": "string"
+  },
+
+  "education": [
+    {
+      "degree": "string",
+      "specialization": "string",
+      "college": "string",
+      "start_year": "number",
+      "end_year": "number",
+      "cgpa": "number"
+    }
+  ],
+
+  "experience": {
+    "total_experience_years": "number",
+
+    "experience_details": [
+      {
+        "company_name": "string",
+        "job_role": "string",
+        "start_date": "string",
+        "end_date": "string",
+        "duration_months": "number",
+        "technologies_used": ["string"],
+        "responsibilities": ["string"]
+      }
+    ]
+  },
+
+  "skills": {
+    "technical_skills": ["string"],
+    "soft_skills": ["string"],
+    "tools_and_technologies": ["string"]
+  },
+
+  "projects": [
+    {
+      "project_name": "string",
+      "description": "string",
+      "technologies_used": ["string"],
+      "project_duration_months": "number"
+    }
+  ],
+
+  "certifications": [
+    {
+      "certificate_name": "string",
+      "issued_by": "string",
+      "year": "number"
+    }
+  ],
+
+  "resume_metadata": {
+    "resume_text": "string",
+    "file_name": "string",
+    "file_type": "pdf/doc/docx",
+    "upload_timestamp": "string"
+  },
+
+  "job_matching_input": {
+    "job_id": "string",
+    "job_title": "string",
+    "job_description": "string",
+    "required_skills": ["string"],
+    "minimum_experience_years": "number"
+  },
+
+  "ai_processing_output": {
+    "candidate_match_score": "number",
+    "matched_skills": ["string"],
+    "missing_skills": ["string"],
+    "experience_match_score": "number",
+    "project_relevance_score": "number",
+    "education_score": "number",
+
+    "candidate_ranking_score": "number",
+
+    "fake_resume_detection": {
+      "fraud_score": "number",
+      "risk_level": "Low/Medium/High",
+      "fraud_reasons": ["string"]
+    },
+
+    "final_ai_decision": "Shortlisted/Review/Rejected"
+  }
+}
