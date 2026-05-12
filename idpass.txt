@@ -1,0 +1,7 @@
+rohitsen231133_db_user
+pZez4k7sz5P2WR7S
+
+mongodb+srv://rohitsen231133_db_user:pZez4k7sz5P2WR7S@cluster0.kghye3b.mongodb.net/?appName=Cluster0
+
+dbname = Zenvora
+connection name = Parsed_resume

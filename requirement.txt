@@ -1,0 +1,78 @@
+# =========================
+# CORE AI/ML & DATA
+# =========================
+numpy
+pandas
+scikit-learn
+scipy
+
+# =========================
+# NLP
+# =========================
+spacy
+nltk
+sentence-transformers
+transformers
+
+# =========================
+# DEEP LEARNING
+# =========================
+tensorflow
+
+# =========================
+# COMPUTER VISION & OCR
+# =========================
+opencv-python
+pytesseract
+easyocr
+Pillow
+
+# =========================
+# PDF & DOCX PARSING
+# =========================
+pdfplumber
+PyPDF2
+python-docx
+docx2txt
+
+# =========================
+# API DEVELOPMENT
+# =========================
+fastapi
+uvicorn
+python-multipart
+
+# =========================
+# DATABASE (OPTIONAL)
+# =========================
+pymongo
+
+# =========================
+# UTILITIES
+# =========================
+regex
+requests
+joblib
+tqdm
+
+# =========================
+# VISUALIZATION
+# =========================
+matplotlib
+seaborn
+
+# =========================
+# AUDIO / SENTIMENT (Future)
+# =========================
+librosa
+soundfile
+
+# =========================
+# FACE DETECTION (Future)
+# =========================
+face-recognition
+
+# =========================
+# ENVIRONMENT VARIABLES
+# =========================
+python-dotenv
