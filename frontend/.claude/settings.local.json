@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx prettier *)",
+      "Bash(node -e \"const p = require\\('./package.json'\\); console.log\\(JSON.stringify\\({formik: p.dependencies?.formik, yup: p.dependencies?.yup}, null, 2\\)\\)\")",
+      "Bash(npm install *)"
+    ]
+  }
+}
