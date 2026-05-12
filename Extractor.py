@@ -1,6 +1,7 @@
 import re
 import uuid
 import spacy
+from SkillsExtractor import extract_skills
 
 from skills_db import (
     TECHNICAL_SKILLS,
@@ -87,10 +88,10 @@ def build_json(text):
         },
 
         "skills": {
-            "technical_skills": technical,
-            "soft_skills": soft,
-            "tools_and_technologies": tools
-        },
+        "technical_skills": extract_skills(text),
+        "soft_skills": [],
+        "tools_and_technologies": []
+    },
 
         "projects": [],
 
