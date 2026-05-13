@@ -1,6 +1,7 @@
 import re
 import uuid
 import spacy
+from ExperienceExtractor import extract_experience
 from SkillsExtractor import extract_skills
 
 from skills_db import (
@@ -82,9 +83,7 @@ def build_json(text):
         "education": [],
 
         "experience": {
-            "total_experience_years": 0,
-
-            "experience_details": []
+            "experience": extract_experience(text),
         },
 
         "skills": {
