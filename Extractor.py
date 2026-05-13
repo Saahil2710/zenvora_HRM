@@ -4,6 +4,11 @@ import spacy
 from ExperienceExtractor import extract_experience
 from SkillsExtractor import extract_skills
 
+from ProjectCertificationExtractor import (
+    extract_projects,
+    extract_certifications
+)
+
 from skills_db import (
     TECHNICAL_SKILLS,
     SOFT_SKILLS,
@@ -87,14 +92,15 @@ def build_json(text):
         },
 
         "skills": {
-        "technical_skills": extract_skills(text),
-        "soft_skills": [],
-        "tools_and_technologies": []
+        "technical_skills": technical,
+        "soft_skills": soft,
+        "tools_and_technologies": tools
     },
 
-        "projects": [],
+    "projects": extract_projects(text),
 
-        "certifications": []
+    "certifications": extract_certifications(text)
+
     }
 
     return data

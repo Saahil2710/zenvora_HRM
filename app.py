@@ -7,12 +7,8 @@ from fastapi.responses import JSONResponse
 from ResumeParser import universal_parser
 from Extractor import build_json
 from database import collection
-
-from fastapi import UploadFile
-
-from Extractor import build_json
-
 from JDExtractor import build_jd_json
+from RankingEngine import generate_candidate_ranking
 
 app = FastAPI()
 
@@ -21,9 +17,82 @@ UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 
-from RankingEngine import (
-    generate_candidate_ranking
+from RiskAnalyzer import (
+    analyze_candidate_risk
 )
+
+@app.post("/risk_analysis")
+async def risk_analysis(
+    resume: UploadFile,
+    jd: UploadFile
+):
+
+    # -----------------------------
+    # Save Resume
+    # -----------------------------
+
+    resume_path = (
+        f"uploads/{resume.filename}"
+    )
+
+    with open(resume_path, "wb") as f:
+        f.write(await resume.read())
+
+    # -----------------------------
+    # Parse Resume
+    # -----------------------------
+
+    resume_text = universal_parser(
+        resume_path
+    )
+
+    resume_data = build_json(
+        resume_text
+    )
+
+    # -----------------------------
+    # Save JD
+    # -----------------------------
+
+    jd_path = (
+        f"uploads/{jd.filename}"
+    )
+
+    with open(jd_path, "wb") as f:
+        f.write(await jd.read())
+
+    # -----------------------------
+    # Parse JD
+    # -----------------------------
+
+    jd_text = universal_parser(
+        jd_path
+    )
+
+    jd_data = build_jd_json(
+        jd_text
+    )
+
+    # -----------------------------
+    # Risk Analysis
+    # -----------------------------
+
+    risk_result = (
+        analyze_candidate_risk(
+            resume_data,
+            jd_data,
+            resume_text,
+            jd_text
+        )
+    )
+
+    return {
+        "candidate_data": resume_data,
+
+        "jd_data": jd_data,
+
+        "risk_analysis": risk_result
+    }
 
 
 @app.post("/candidate_ranking")

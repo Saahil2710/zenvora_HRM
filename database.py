@@ -26,11 +26,11 @@ try:
     client.server_info()  # Test the connection
     db = client[DATABASE_NAME]
     collection = db[COLLECTION_NAME]
-    print(f"✅ MongoDB Connected Successfully!")
+    print(f"[SUCCESS] MongoDB Connected Successfully!")
     print(f"   Database: {DATABASE_NAME}")
     print(f"   Collection: {COLLECTION_NAME}")
 except Exception as e:
-    print(f"❌ Warning: MongoDB connection failed")
+    print(f"[ERROR] Warning: MongoDB connection failed")
     print(f"   Error: {str(e)}")
     print(f"   Database: {DATABASE_NAME}")
     print(f"   Collection: {COLLECTION_NAME}")
